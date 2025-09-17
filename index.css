@@ -1,0 +1,248 @@
+:root {
+    --primary: #1976d2;
+    --accent: #ff4d4d;
+    --success: #4caf50;
+    --bg: #181c24;
+    --white: #232837;
+    --text: #e3e6f3;
+    --shadow: 0 2px 16px rgba(0,0,0,0.25);
+    --input-bg: #23273a;
+    --input-border: #2e3347;
+    --input-focus: #1976d2;
+    --button-hover: #125ea7;
+    --calendar-bg: #232837;
+    --calendar-border: #31364a;
+    --event-bg: #1976d2;
+    --event-text: #fff;
+    --event-accent: #ff4d4d;
+}
+
+* {
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    color: var(--text);
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    min-height: 100vh;
+    transition: background 0.5s;
+}
+
+h2 {
+    text-align: center;
+    margin: 36px 0 22px 0;
+    color: var(--primary);
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    font-size: 2.2rem;
+    text-shadow: 0 2px 8px rgba(25, 118, 210, 0.15);
+    transition: color 0.3s;
+    animation: fadeInDown 0.8s;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--white);
+    max-width: 420px;
+    margin: 0 auto 32px auto;
+    padding: 32px 22px 22px 22px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    gap: 18px;
+    border: 1.5px solid var(--calendar-border);
+    animation: fadeInUp 1s;
+}
+
+.formulario label {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+.formulario input[type="date"] {
+    padding: 10px 14px;
+    font-size: 1rem;
+    border: 1.5px solid var(--input-border);
+    border-radius: 8px;
+    outline: none;
+    background: var(--input-bg);
+    color: var(--text);
+    transition: border 0.2s, box-shadow 0.3s;
+    box-shadow: 0 1px 4px rgba(25, 118, 210, 0.07);
+}
+
+.formulario input[type="date"]:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.15);
+}
+
+.formulario button {
+    padding: 10px 28px;
+    font-size: 1.08rem;
+    background: var(--primary);
+    color: var(--event-text);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.13);
+    margin-top: 8px;
+    animation: popIn 0.7s;
+}
+
+.formulario button:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.18);
+}
+
+#calendar {
+    max-width: 900px;
+    margin: 0 auto 36px auto;
+    background: var(--calendar-bg);
+    padding: 24px 14px 14px 14px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    min-height: 420px;
+    border: 1.5px solid var(--calendar-border);
+    display: none;
+    animation: fadeIn 1.2s;
+}
+
+.fc {
+    background: transparent;
+    color: var(--text);
+}
+
+.fc-toolbar {
+    background: transparent;
+    border-bottom: 1px solid var(--calendar-border);
+    margin-bottom: 12px;
+}
+
+.fc-toolbar-title {
+    color: var(--primary);
+    font-size: 1.3rem !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.fc-button {
+    background: var(--primary) !important;
+    color: var(--event-text) !important;
+    border: none !important;
+    border-radius: 6px !important;
+    box-shadow: 0 1px 4px rgba(25, 118, 210, 0.10);
+    transition: background 0.2s;
+}
+
+.fc-button:hover, .fc-button:focus {
+    background: var(--button-hover) !important;
+}
+
+.fc-daygrid-day {
+    background: var(--calendar-bg);
+    border: 1px solid var(--calendar-border);
+    transition: background 0.2s;
+}
+
+.fc-daygrid-day.fc-day-today {
+    background: #232f4a !important;
+    border: 1.5px solid var(--primary);
+}
+
+.fc-daygrid-day-number {
+    color: var(--text);
+    font-size: 1.05rem !important;
+    font-weight: 600;
+}
+
+.fc-event {
+    
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    opacity: 0.98;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.13);
+    transition: background 0.2s, transform 0.15s;
+    animation: popIn 0.7s;
+}
+.fc-event:hover {
+   
+    transform: scale(1.04);
+}
+
+.fc-scrollgrid {
+    background: transparent !important;
+}
+
+.fc-col-header-cell {
+    background: var(--calendar-bg) !important;
+    color: var(--primary) !important;
+    border-bottom: 1.5px solid var(--calendar-border) !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.fc-daygrid-event-dot {
+    background: var(--accent) !important;
+}
+
+.fc-daygrid-block-event .fc-event-title {
+    color: var(--event-text) !important;
+}
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8);}
+    80% { opacity: 1; transform: scale(1.05);}
+    100% { opacity: 1; transform: scale(1);}
+}
+
+/* Responsive styles */
+@media (max-width: 1000px) {
+    #calendar {
+        max-width: 98vw;
+        padding: 12px 2vw 12px 2vw;
+    }
+}
+@media (max-width: 600px) {
+    h2 {
+        font-size: 1.2rem;
+        margin: 16px 0 8px 0;
+    }
+    .formulario {
+        max-width: 98vw;
+        padding: 10px 2vw 8px 2vw;
+        gap: 10px;
+    }
+    #calendar {
+        min-height: 260px;
+        padding: 4px 1vw 4px 1vw;
+    }
+    .fc-toolbar-title {
+        font-size: 1rem !important;
+    }
+    .fc-daygrid-day-number {
+        font-size: 0.9rem !important;
+    }
+}
